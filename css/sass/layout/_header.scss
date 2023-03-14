@@ -1,0 +1,128 @@
+/* Start Header */
+.navbar-default{
+    position: fixed;
+    height: 70px;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include padding(10px, 0);
+    background-color: #0f0f0f;
+    border: none;
+    @include border-radius(0);
+
+    .navbar-brand{
+        color: #FFF;
+        @extend %capitalize;
+        letter-spacing: 2px;
+        font: {
+            family: 'Poppins', sans-serif;
+            size: 28px;
+            weight: bold;
+        };
+
+        &:hover{
+            color: #FFF;
+        }
+    }
+
+    .navbar-nav{
+        li{
+            a{
+                @extend %transition;
+                color: #FFF;
+                @extend %upper;
+                font: {
+                    size: 13px;
+                    weight: 500;
+                    family: 'Poppins', sans-serif;
+                };
+                @media (min-width: 768px) and (max-width: 992px) {
+                    padding: 15px 9px;
+                }
+
+                &:hover{
+                    color: $greenColor;
+                }
+
+                &.active{
+                    color: $greenColor;
+                }
+            }
+
+            .dropdown-menu{
+                right: auto;
+                left: 0;
+                min-width: 200px;
+
+                li{
+                    a{
+                        padding: 10px 20px;
+                        font-size: 14px;
+
+                        @media #{$minSmall} {
+                            color:#353535 !important;
+
+                            &:hover{
+                                background-color: transparent;
+                                color: $greenColor !important;
+                            }
+                        }
+                    }
+                }
+
+                .divider{
+                    background-color: $greenColor;
+                }
+            }
+        }
+    }
+
+    .navbar-nav > .open > a, 
+    .navbar-nav > .open > a:hover, 
+    .navbar-nav > .open > a:focus{
+        color: $greenColor;
+        background-color: transparent;
+    }
+
+   .navbar-collapse,
+   .navbar-form{
+       border: none;
+       background-color: #0f0f0f;
+   }
+
+   .navbar-nav{
+       .open{
+           .dropdown-menu{
+               li{
+                   a{
+                        color: #FFF;
+                        font-size: 13px;
+
+                        &:hover{
+                            color: $greenColor;
+                        }
+                   }
+               }
+           }
+       }
+   }
+
+   .navbar-toggle{
+       border-color: $greenColor;
+
+       .icon-bar{
+           background-color: #FFF;
+       }
+
+       &:focus,
+       &:hover{
+           background-color: $greenColor;
+
+           .icon-bar{
+               background-color: #FFF;
+           }
+       }
+   }
+}
+/* End Header */
